@@ -21,7 +21,7 @@
 4. Creé mi rama y copié `_template` a mi carpeta.
 5. Puse mi nombre, mi frase y mis cuatro enlaces en mi `index.html`.
 6. Agregué mi foto (`photo.jpg`, 800 × 800 píxeles) y mi currículum (`resume.pdf`, sin mi dirección ni mi teléfono).
-7. Llené la tarjeta de mi tesis con título, descripción e imagen (`tesis.jpg`, 800 × 600 píxeles). Borré las tres tarjetas que no usaba.
+7. Llené la tarjeta de mi tesis con título, descripción e imagen (`tesis.jpg`, 800 × 600 píxeles). Agregué una segunda tarjeta para mi blog Salud Pública 180 y borré las que no usaba.
 8. Llené Education & Experience con mis datos y cambié "MS in Artificial Intelligence" por mi maestría.
 9. Guardé mis cambios con un commit, los subí a GitHub con GitHub Desktop y abrí el pull request #102.
 
@@ -29,7 +29,8 @@ Solo cambié archivos dentro de mi carpeta. No toqué ningún archivo compartido
 
 ## Mis commits
 1. `f8db5d6`: Add María L. Padilla Sáez page (22 de octubre de 2026)
-2. Add report (este reporte)
+2. `61008cb`: Add report
+3. Add blog project card
 
 ## Estado
 El pull request #102 está abierto y en espera de la revisión del profesor.
