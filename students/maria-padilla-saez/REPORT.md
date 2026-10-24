@@ -2,37 +2,28 @@
 
 **Nombre:** María L. Padilla Sáez  
 **Usuario de GitHub:** mariapadilla-debug  
-**Rama:** `student/maria-padilla-saez`  
-**Carpeta:** `students/maria-padilla-saez`  
-**Pull request:** https://github.com/rodolfocapdevilla-au/msai-portfolio/pull/102
+**Página en vivo:** https://rodolfocapdevilla-au.github.io/msai-portfolio/students/maria-padilla-saez/  
+**Pull request:** https://github.com/rodolfocapdevilla-au/msai-portfolio/pull/102 (aceptado por el profesor)
 
-**Mi frase:** Enfermera epidemióloga, con desempeño en vigilancia, prevención y control de enfermedades, contribuyendo a la protección de la salud de la comunidad.
+## Mis tarjetas de proyecto
+1. **Tesis: Association Between Physical Activity, Sedentary Behavior and Lifestyle in University Students in the University of Puerto Rico at Cayey.**
+   El estudio analizó la relación entre la actividad física, el comportamiento sedentario y los estilos de vida de estudiantes de la Universidad de Puerto Rico en Cayey. Mediante una encuesta, se recopiló información sobre sus hábitos de movimiento, tiempo sentado y prácticas cotidianas. Los datos se examinaron para identificar posibles asociaciones entre estas variables y aportar información sobre la salud y el bienestar estudiantil.
+2. **Blog: Salud Pública 180** (https://mariap62.wordpress.com/).
+   Tu guía completa para una vida saludable y comunitaria.
+   *Esta tarjeta está en mi rama, pero todavía no aparece en la página en vivo: la agregué después de que el profesor aceptó el pull request #102.*
 
-## Mis cuatro enlaces
-1. LinkedIn: https://www.linkedin.com/in/maria-padilla-saez-9878
-2. GitHub: https://github.com/mariapadilla-debug
-3. Currículum: https://github.com/mariapadilla-debug/msai-portfolio/blob/student/maria-padilla-saez/students/maria-padilla-saez/resume.pdf
-4. Blog: https://mariap62.wordpress.com/
+## Notas recibidas en mi pull request
+No recibí notas. El profesor aceptó el pull request #102 sin comentarios ni cambios pedidos.
 
-## Pasos completados
-1. Creé `CLAUDE.md` con mis reglas y `CONTEXT.md` para anotar mi avance.
-2. Inicié sesión en GitHub e hice fork de `rodolfocapdevilla-au/msai-portfolio` en mi cuenta.
-3. Cloné mi fork en mi computadora.
-4. Creé mi rama y copié `_template` a mi carpeta.
-5. Puse mi nombre, mi frase y mis cuatro enlaces en mi `index.html`.
-6. Agregué mi foto (`photo.jpg`, 800 × 800 píxeles) y mi currículum (`resume.pdf`, sin mi dirección ni mi teléfono).
-7. Llené la tarjeta de mi tesis con título, descripción e imagen (`tesis.jpg`, 800 × 600 píxeles). Agregué una segunda tarjeta para mi blog Salud Pública 180, con la imagen de portada de mi blog (`blog.jpg`, 640 × 480 píxeles), y borré las que no usaba.
-8. Llené Education & Experience con mis datos y cambié "MS in Artificial Intelligence" por mi maestría.
-9. Guardé mis cambios con un commit, los subí a GitHub con GitHub Desktop y abrí el pull request #102.
+## Revisión de la página de un compañero
+PENDIENTE. Todavía no he revisado la página de ningún compañero.
 
-Solo cambié archivos dentro de mi carpeta. No toqué ningún archivo compartido.
-
-## Mis commits
+## Mis commits (del más antiguo al más reciente)
 1. `f8db5d6`: Add María L. Padilla Sáez page (22 de octubre de 2026)
-2. `61008cb`: Add report
-3. `f22552c`: Add blog project card
-4. `88608c2`: Add blog card image
-5. Use Salud Pública 180 cover image for blog card
+2. `61008cb`: Add report (22 de octubre de 2026)
+3. `f22552c`: Add blog project card (23 de octubre de 2026)
+4. `88608c2`: Add blog card image (24 de octubre de 2026)
+5. `5e47ba1`: Use Salud Pública 180 cover image for blog card (24 de octubre de 2026)
+6. Update report (este reporte)
 
-## Estado
-El pull request #102 está abierto y en espera de la revisión del profesor.
+Los commits 1 y 2 están en el sitio de la clase. Los commits 3 a 6 van en un pull request nuevo.
