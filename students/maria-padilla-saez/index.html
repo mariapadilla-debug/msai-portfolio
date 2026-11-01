@@ -10,7 +10,33 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css">
+<link rel="stylesheet" href="https://rodolfocapdevilla-au.github.io/msai-portfolio/assets/style.css">
+<style>
+  /* Formulario de contacto — usa los colores y medidas de style.css de la clase */
+  .contact-form{display:grid;gap:16px;max-width:560px}
+  .contact-form label{display:grid;gap:6px;font-weight:600;font-size:15px}
+  .contact-form input,
+  .contact-form textarea{
+    font:inherit;font-weight:400;color:var(--ink);background:#fff;
+    border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;width:100%;
+  }
+  .contact-form textarea{min-height:140px;resize:vertical}
+  .contact-form input:focus,
+  .contact-form textarea:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:var(--blue)}
+  .contact-form button{
+    justify-self:start;font:inherit;font-weight:600;color:#fff;background:var(--blue);
+    border:0;border-radius:var(--r);padding:12px 28px;cursor:pointer;
+  }
+  .contact-form button:hover{background:var(--blue-dark)}
+  .contact-form button:disabled{opacity:.6;cursor:wait}
+  /* Casillero trampa: fuera de la pantalla para personas, visible para robots */
+  .contact-form .trap{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+  .contact-error{margin:0;color:var(--red);font-weight:600}
+  .contact-thanks{
+    max-width:560px;margin:0;padding:20px;border:1px solid var(--line);border-radius:var(--r);
+    background:var(--bg-soft);font-size:17px;font-weight:600;
+  }
+</style>
 </head>
 <body>
 
@@ -19,7 +45,7 @@
   <a class="badge" href="#top">María L. Padilla Sáez</a>
   <a class="pill" href="#projects">Projects</a>
   <a class="pill" href="#education">Education &amp; Experience</a>
-  <a class="pill" href="../../">All students</a>
+  <a class="pill" href="https://rodolfocapdevilla-au.github.io/msai-portfolio/">All students</a>
   <span class="spacer"></span>
   <a class="pill" href="https://atlantisuniversity.edu/" target="_blank" rel="noopener">Atlantis University</a>
 </nav>
@@ -93,6 +119,28 @@
         </div>
       </div>
 
+      <!-- ===== Formulario de contacto — envía a la dirección completa de mi Worker en Cloudflare ===== -->
+      <h2 id="contact">Contacto</h2>
+      <form class="contact-form" method="post" action="https://maria-padilla-saez.maria-padilla-saez-cloudflare.workers.dev/api/contact">
+        <label>Nombre
+          <input type="text" name="name" autocomplete="name" maxlength="100" required>
+        </label>
+        <label>Correo
+          <input type="email" name="email" autocomplete="email" maxlength="200" required>
+        </label>
+        <label>Mensaje
+          <textarea name="message" maxlength="5000" required></textarea>
+        </label>
+        <!-- Casillero trampa: una persona nunca lo llena; si viene lleno, es un robot -->
+        <div class="trap" aria-hidden="true">
+          <label>No llenes este casillero
+            <input type="text" name="website" tabindex="-1" autocomplete="off">
+          </label>
+        </div>
+        <button type="submit">Enviar</button>
+        <p class="contact-error" role="alert" hidden></p>
+      </form>
+
       <footer>
         Maestría en Administración de Servicios de la Salud y Enfermería · Atlantis University
       </footer>
@@ -101,6 +149,7 @@
   </div>
 </div>
 
-<script src="../../assets/feedback.js" defer></script>
+<script src="https://rodolfocapdevilla-au.github.io/msai-portfolio/assets/feedback.js" defer></script>
+<script src="contact.js" defer></script>
 </body>
 </html>
