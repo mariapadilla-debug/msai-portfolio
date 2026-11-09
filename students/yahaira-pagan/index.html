@@ -9,7 +9,39 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css">
+<link rel="stylesheet" href="https://rodolfocapdevilla-au.github.io/msai-portfolio/assets/style.css">
+<style>
+  .contact-form{display:grid;gap:8px;max-width:560px}
+  .contact-form label{font-weight:600}
+  .contact-form input,.contact-form textarea{font:inherit;padding:12px;border:1px solid var(--line);border-radius:var(--r);background:#fff;color:var(--ink)}
+  .contact-form input:focus,.contact-form textarea:focus{outline:2px solid var(--blue);outline-offset:1px}
+  .contact-form button{justify-self:start;margin-top:8px;font:inherit;font-weight:700;color:#fff;background:var(--blue);border:0;border-radius:var(--r);padding:12px 28px;cursor:pointer}
+  .contact-form button:hover{background:var(--blue-dark)}
+  .contact-form .hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+  .contact-error{color:var(--red);font-weight:600;margin:0}
+  .contact-thanks{max-width:560px;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--bg-soft);font-weight:600;margin:0}
+
+  /* Caja de chat: abajo a la derecha, encima del botón Feedback de la clase */
+  .chat-toggle{position:fixed;right:18px;bottom:76px;z-index:9997;font:inherit;font-weight:600;font-size:15px;line-height:1;color:#fff;background:var(--blue);border:0;border-radius:999px;padding:13px 20px;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.22)}
+  .chat-toggle:hover{background:var(--blue-dark)}
+  .chat-box{position:fixed;right:18px;bottom:130px;z-index:9997;width:min(340px,calc(100vw - 36px));max-height:min(460px,calc(100vh - 160px));display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 28px rgba(16,24,40,.18);overflow:hidden}
+  .chat-box[hidden]{display:none}
+  .chat-head{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:var(--blue);color:#fff;font-weight:700}
+  .chat-close{font:inherit;font-size:20px;line-height:1;color:#fff;background:none;border:0;cursor:pointer;padding:0 4px}
+  .chat-log{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;min-height:140px;background:var(--bg-soft)}
+  .chat-msg{max-width:85%;padding:8px 12px;border-radius:12px;font-size:15px;line-height:1.4;white-space:pre-wrap;overflow-wrap:anywhere}
+  .chat-msg.me{align-self:flex-end;background:var(--blue);color:#fff}
+  .chat-msg.system{align-self:flex-start;background:#fff;border:1px solid var(--line);color:var(--ink-soft)}
+  .chat-msg.error{align-self:flex-start;background:#fff;border:1px solid var(--red);color:var(--red);font-weight:600}
+  .chat-form{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line);background:#fff}
+  .chat-form input{flex:1;min-width:0;font:inherit;padding:10px;border:1px solid var(--line);border-radius:var(--r)}
+  .chat-form input:focus{outline:2px solid var(--blue);outline-offset:1px}
+  .chat-form button{font:inherit;font-weight:700;color:#fff;background:var(--blue);border:0;border-radius:var(--r);padding:10px 16px;cursor:pointer}
+  .chat-form button:hover{background:var(--blue-dark)}
+  .chat-form button:disabled{opacity:.6;cursor:default}
+  .chat-msg{font-family:var(--font)}
+  .chat-note{margin:0;padding:8px 12px;border-top:1px solid var(--line);background:#fff;color:var(--ink-soft);font-size:12px;line-height:1.4;text-align:center}
+</style>
 </head>
 <body>
 
@@ -17,7 +49,7 @@
   <a class="badge" href="#top">Yahaira Pagan</a>
   <a class="pill" href="#projects">Projects</a>
   <a class="pill" href="#education">Education &amp; Experience</a>
-  <a class="pill" href="../../">All students</a>
+  <a class="pill" href="https://rodolfocapdevilla-au.github.io/msai-portfolio/">All students</a>
 </nav>
 
 <div class="wrap" id="top">
@@ -54,13 +86,13 @@
         </article>
 
         <article class="card">
-          <img src="../../assets/placeholder.jpg" alt="">
+          <img src="https://rodolfocapdevilla-au.github.io/msai-portfolio/assets/placeholder.jpg" alt="">
           <h3>event-ready-generator del Módulo 3</h3>
           <p>Una skill de Claude que convierte el intercambio de correos con un ponente invitado en el paquete de difusión de un evento de Atlantis University. Lee el hilo y arma el flyer, tres imágenes y los prompts para la página del evento. El resultado: el material del evento listo a partir de un solo correo.</p>
         </article>
 
         <article class="card">
-          <img src="../../assets/placeholder.jpg" alt="">
+          <img src="https://rodolfocapdevilla-au.github.io/msai-portfolio/assets/placeholder.jpg" alt="">
           <h3>Vitrina de skills que construyeron en el Módulo 4</h3>
           <p>Una página local que muestra las skills que construí en el Módulo 3. La hice con HTML, CSS y JavaScript sin frameworks, con los datos en un archivo aparte y los colores de la marca de AU. El resultado: una vitrina que se abre con doble clic, sin servidor.</p>
         </article>
@@ -86,6 +118,27 @@
         </div>
       </div>
 
+      <h2 id="contact">Contacto</h2>
+      <form class="contact-form" method="post" action="https://yahaira-pagan.yahaira-pagan-cloudflare.workers.dev/api/contact">
+        <label for="contact-name">Nombre</label>
+        <input id="contact-name" name="name" type="text" required autocomplete="name">
+
+        <label for="contact-email">Correo</label>
+        <input id="contact-email" name="email" type="email" required autocomplete="email">
+
+        <label for="contact-message">Mensaje</label>
+        <textarea id="contact-message" name="message" rows="5" required></textarea>
+
+        <div class="hp" aria-hidden="true">
+          <label for="contact-website">No llenar este campo</label>
+          <input id="contact-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button type="submit">Enviar</button>
+        <p class="contact-error" id="contact-error" role="alert" hidden>Algo salió mal, inténtalo de nuevo</p>
+      </form>
+      <p class="contact-thanks" id="contact-thanks" role="status" hidden>¡Gracias! Recibí tu mensaje y te responderé pronto.</p>
+
       <footer>
         MS in Education · Atlantis University
       </footer>
@@ -94,6 +147,128 @@
   </div>
 </div>
 
-<script src="../../assets/feedback.js" defer></script>
+<script>
+  (function () {
+    var form = document.querySelector(".contact-form");
+    var thanks = document.getElementById("contact-thanks");
+    var error = document.getElementById("contact-error");
+    var button = form.querySelector("button");
+
+    function showThanks() {
+      form.hidden = true;
+      thanks.hidden = false;
+    }
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      error.hidden = true;
+
+      // Si el casillero escondido trae algo, es un robot: no se envía nada.
+      if (form.elements["website"].value !== "") {
+        showThanks();
+        return;
+      }
+
+      button.disabled = true;
+      fetch(form.action, { method: "POST", body: new FormData(form) })
+        .then(function (response) {
+          if (!response.ok) { throw new Error("HTTP " + response.status); }
+          showThanks();
+        })
+        .catch(function () {
+          error.hidden = false;
+          button.disabled = false;
+        });
+    });
+  })();
+</script>
+<button class="chat-toggle" id="chat-toggle" type="button" aria-expanded="false" aria-controls="chat-box">Chat</button>
+<section class="chat-box" id="chat-box" aria-label="Chat" hidden>
+  <div class="chat-head">
+    <span>Chat</span>
+    <button class="chat-close" id="chat-close" type="button" aria-label="Cerrar el chat">×</button>
+  </div>
+  <div class="chat-log" id="chat-log" role="log" aria-live="polite">
+    <div class="chat-msg system">¡Hola! Escribe tu mensaje aquí abajo.</div>
+  </div>
+  <form class="chat-form" id="chat-form" method="post" action="https://yahaira-pagan.yahaira-pagan-cloudflare.workers.dev/api/chat">
+    <input id="chat-input" name="message" type="text" placeholder="Escribe un mensaje" aria-label="Tu mensaje" required maxlength="500" autocomplete="off">
+    <button type="submit">Enviar</button>
+  </form>
+  <p class="chat-note">Asistente de IA · puede equivocarse · los mensajes los procesa Google</p>
+</section>
+
+<script>
+  (function () {
+    var toggle = document.getElementById("chat-toggle");
+    var box = document.getElementById("chat-box");
+    var close = document.getElementById("chat-close");
+    var log = document.getElementById("chat-log");
+    var form = document.getElementById("chat-form");
+    var input = document.getElementById("chat-input");
+    var button = form.querySelector("button");
+    // Número propio de esta conversación; Cloudflare lo usa para contar los mensajes.
+    var conversationId = (window.crypto && crypto.randomUUID)
+      ? crypto.randomUUID()
+      : String(Date.now()) + Math.random().toString(16).slice(2);
+
+    function setOpen(open) {
+      box.hidden = !open;
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      if (open) { input.focus(); }
+    }
+
+    function addLine(kind, text) {
+      var line = document.createElement("div");
+      line.className = "chat-msg " + kind;
+      line.textContent = text;
+      log.appendChild(line);
+      log.scrollTop = log.scrollHeight;
+    }
+
+    toggle.addEventListener("click", function () { setOpen(box.hidden); });
+    close.addEventListener("click", function () { setOpen(false); toggle.focus(); });
+    box.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") { setOpen(false); toggle.focus(); }
+    });
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      var text = input.value.trim();
+      if (text === "") { return; }
+
+      addLine("me", text);
+      input.value = "";
+      button.disabled = true;
+
+      var data = new FormData(form);
+      data.append("conversation", conversationId);
+
+      fetch(form.action, { method: "POST", body: data })
+        .then(function (response) {
+          return response.json().catch(function () { return null; }).then(function (body) {
+            if (!response.ok) {
+              // Solo el aviso del límite de mensajes se muestra tal cual; todo lo demás es el aviso general.
+              throw { limitMessage: response.status === 429 && body && body.message };
+            }
+            return body;
+          });
+        })
+        .then(function (body) {
+          if (body && typeof body.reply === "string" && body.reply !== "") {
+            addLine("system", body.reply);
+          }
+        })
+        .catch(function (error) {
+          addLine("error", (error && error.limitMessage) || "Algo salió mal, inténtalo de nuevo");
+        })
+        .then(function () {
+          button.disabled = false;
+          input.focus();
+        });
+    });
+  })();
+</script>
+<script src="https://rodolfocapdevilla-au.github.io/msai-portfolio/assets/feedback.js" defer></script>
 </body>
 </html>
