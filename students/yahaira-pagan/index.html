@@ -237,11 +237,12 @@
       if (text === "") { return; }
 
       addLine("me", text);
-      input.value = "";
       button.disabled = true;
 
+      // Primero se arma el mensaje con lo escrito; recién después se vacía la caja.
       var data = new FormData(form);
       data.append("conversation", conversationId);
+      input.value = "";
 
       fetch(form.action, { method: "POST", body: data })
         .then(function (response) {
