@@ -16,7 +16,11 @@
 No recibí notas. El profesor aceptó el pull request #102 sin comentarios ni cambios pedidos.
 
 ## Revisión de la página de un compañero
-PENDIENTE. Todavía no he revisado la página de ningún compañero.
+**Página revisada:** Yahaira Pagan — https://rodolfocapdevilla-au.github.io/msai-portfolio/students/yahaira-pagan/
+
+Revisé la página de Yahaira Pagan. Me gustó su presentación, porque se nota su pasión por ayudar a los estudiantes. También me gustó que cada proyecto diga claramente para qué sirve. Le recomiendo poner una foto propia en sus proyectos del evento y de la vitrina, y corregir el título de la vitrina, que dice "Módulo 4" cuando el proyecto es del Módulo 3.
+
+**Recomendación: ponerle foto a todos sus proyectos.** Su primer proyecto tiene una foto muy bonita de la hoja de los números. Los otros dos muestran la imagen gris de la plantilla. Podría poner, por ejemplo, el flyer de su evento o una captura de su vitrina.
 
 ## Mis commits (del más antiguo al más reciente)
 1. `f8db5d6`: Add María L. Padilla Sáez page (22 de octubre de 2026)
